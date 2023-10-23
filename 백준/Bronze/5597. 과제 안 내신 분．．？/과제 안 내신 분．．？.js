@@ -1,9 +1,5 @@
 let fs = require("fs");
-let input = fs.readFileSync("/dev/stdin").toString().split("\n");
-let arr = new Array(28);
-for(let i=0;i<28;i++){
-  arr[i] = Number(input[i]);
-}
+let arr = fs.readFileSync("/dev/stdin").toString().trim().split("\n").map(n=>Number(n));
 for(let i=1;i<=30;i++){
   if(!arr.includes(i)){
     console.log(i)
